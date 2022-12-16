@@ -32,7 +32,7 @@ body {
   font-family: inherit;
   font-size: 100%;
   background: #333 url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
-  border: solid 5px #ccc;
+  border: solid 5px #FFFF33;
   box-shadow: 0 0 50px rgb(255, 255, 255, 0.5);
   color: #fff;
   padding: 10px 32px;
@@ -47,8 +47,8 @@ body {
 .search-box:focus {
   transition: 0.7s ease;
   background-color: #333;
-  border-color: #0dd3ff;
-  box-shadow: 0 0 40px #0dd3ff
+  border-color: #E200D5;
+  box-shadow: 0 0 40px #9D00FF
 }
 
 
@@ -121,7 +121,7 @@ body {
 
 .repo {
   text-decoration: none;
-  color: #0dd3ff;
+  color: #EFD033;
   background-color: #54565a;
   border: solid 3px #54565a;
   border-radius: 10px;
@@ -133,9 +133,9 @@ body {
 }
 
 .repo:hover{
-  color: #ccc;
+  color: #e3ddd3;
   background-color: #54565a;
-  border: #0dd3ff solid 3px;
+  border: #9D00FF solid 3px;
 }
 
 @media (max-width: 600px) {
