@@ -5,10 +5,11 @@ const main = document.getElementById('main');
 const form = document.getElementById('form');
 const search = document.getElementById('search');
 
+// todo Get user
 async function getUser(username) {
     try {
         const { data } = await axios(APIURL + username)
-
+      //  console.log(data)
         createUserCard(data)
         getRepos(username)
     } catch(err) {
@@ -18,16 +19,18 @@ async function getUser(username) {
     }
 }
 
+// todo Get repos
 async function getRepos(username) {
     try {
         const { data } = await axios(APIURL + username + '/repos?sort=created')
-
+      //  console.log(data)
         addReposToCard(data)
     } catch(err) {
         createErrorCard('Problem fetching repos')
     }
 }
 
+// todo Create user card
 function createUserCard(user) {
     const userID = user.name || user.login
     var crdate = user.created_at;
@@ -54,20 +57,23 @@ function createUserCard(user) {
         </div>
     </div>
     `
+    //console.log(cardHTML)
     main.innerHTML = cardHTML
     
 }
 
+// todo Create error card
 function createErrorCard(msg) {
     const cardHTML = `
         <div class="card">
             <h1>${msg}</h1>
         </div>
     `
-
+  //  console.log(cardHTML)
     main.innerHTML = cardHTML
 }
 
+// todo Add repos to card
 function addReposToCard(repos) {
     const reposEl = document.getElementById('repos')
     repos
@@ -79,10 +85,12 @@ function addReposToCard(repos) {
             repoEl.target = '_blank'
             repoEl.innerText = repo.name
 
+            //console.log
             reposEl.appendChild(repoEl)
         })
 }
 
+// todo Event listeners
 form.addEventListener('submit', (e) => {
     e.preventDefault()
     const user = search.value
